@@ -143,6 +143,7 @@ bot.on("message", async(lol) => {
 
         switch (command) {
             case 'help':
+              case 'menu':
                 await help.help(lol, user.full_name, lol.message.from.id.toString())
                 break
 
@@ -220,6 +221,7 @@ bot.on("message", async(lol) => {
 
                 // Downloader //
             case 'ytplay':
+              case 'play':
                 if (args.length == 0) return await reply(`Example: ${prefix + command} melukis senja`)
                 await fetchJson(`https://api.lolhuman.xyz/api/ytsearch?apikey=${apikey}&query=${args.join(" ")}`)
                     .then(async(result) => {
@@ -230,6 +232,7 @@ bot.on("message", async(lol) => {
                     })
                 break
             case 'ytsearch':
+              case 'yts':
                 if (args.length == 0) return await reply(`Example: ${prefix + command} Melukis Senja`)
                 try {
                     query = args.join(" ")

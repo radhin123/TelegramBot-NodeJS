@@ -71,14 +71,14 @@ bot.on("callback_query", async(lol) => {
     if (callback_data == "help") return await help[callback_data](lol, user.full_name, user_id)
     await help[callback_data](lol, user_id.toString())
 })
-bot.action('loli', async(ctx) => {
+bot.action('loli', async(lol) => {
 
 if(cekStatus(ctx.update.callback_query.from.id, ban)) return
 
-ctx.deleteMessage()
-ctx.reply('mencari')
+lol.deleteMessage()
+lol.reply('mencari')
 paq = await toJson(`https://api.rzkyfdlh.tech/loli`)
-ctx.replyWithPhoto({
+lol.replyWithPhoto({
 url: paq.url,
 filename: 'kitten.jpg'
 },{caption: 'Pedo yh bg 🤨📸'})

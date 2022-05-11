@@ -71,7 +71,18 @@ bot.on("callback_query", async(lol) => {
     if (callback_data == "help") return await help[callback_data](lol, user.full_name, user_id)
     await help[callback_data](lol, user_id.toString())
 })
+bot.action('loli', async(ctx) => {
 
+if(cekStatus(ctx.update.callback_query.from.id, ban)) return
+
+ctx.deleteMessage()
+ctx.reply('mencari')
+paq = await toJson(`https://api.rzkyfdlh.tech/loli`)
+ctx.replyWithPhoto({
+url: paq.url,
+filename: 'kitten.jpg'
+},{caption: 'Pedo yh bg 🤨📸'})
+})
 bot.on("message", async(lol) => {
     try {
         const body = lol.message.text || lol.message.caption || ""

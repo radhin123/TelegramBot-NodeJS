@@ -477,6 +477,16 @@ bot.on("message", async(lol) => {
                 text += `\nDescription : ${result.description}`
                 await lol.replyWithPhoto({ url: result.coverImage.large }, { caption: text })
                 break
+            case 'loli':
+
+iky.reply('mencari')
+
+paq = await toJson(`https://api.rzkyfdlh.tech/loli`)
+iky.replyWithPhoto({
+url: paq.url,
+filename: 'kitten.jpg'
+},{caption: 'Pedo yh bg 🤨📸',reply_to_message_id: iky.message.message_id})
+break
             case 'wait':
                 if (isQuotedImage || isQuotedAnimation || isQuotedVideo || isQuotedDocument) {
                     url_file = await tele.getLink(file_id)
